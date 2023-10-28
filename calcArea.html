@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate area</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+  <body>
+    <div class="learn-triangles">
+      <h1>Learn Triangles</h1>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Play Quiz</a></li>
+        <li><a href="./calcArea.html">Calculate Area</a></li>
+        <li><a href="./calcHypot.html">Calculate Hypotenouse</a></li>
+        <li>
+          <a href="./angle-formTriangle.html"
+            >Check Weather Angle From a Triangle</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <h1 class="calcuArea" >calculate the Area</h1>
+    <div class="area-container">
+      <ul>
+        <li onclick="handleClickOne()" id="area-one">
+          Area of right angled triangle(base and Height known)
+        </li>
+        <li onclick="handleClickTwo()">
+          Area of Equilateral triangle (all side of must be equal)
+        </li>
+        <li onclick="handleClickThree()">
+          Area of triangle(With all 3 sides having different Measures)
+        </li>
+        <li onclick="handleClickFour()">
+          Area of triangle (with 2 sides and 1 angle known)
+        </li>
+      </ul>
+    </div>
+    <div class="show-result">
+      <div class="area-of-triangle" id="triangle">
+        <h2>Area of a right angled triangle</h2>
+        <h5>The formula to calculate the area of right angled triangle is</h5>
+        <p>Formula: 1/2 x base x height</p>
+        <div class="base la">
+          <label for="Base">Base</label>
+          <input class="input-triangle-Area" type="number" />
+        </div>
+        <div class="height la">
+          <label for="Height">Height</label>
+          <input class="input-triangle-Area" type="number" />
+        </div>
+        <h2 class="triangle-area-result"></h2>
+        <button class="calculateAreaOfTriangle">Calculate</button>
+      </div>
+      <div class="equilateral-triangle" id="equilateral">
+        <h2>Area of an equilateral triangle</h2>
+        <h5>The formula to calculate the area of equilateral triangle is</h5>
+        <p>Formula: (√3)/4 × side 2</p>
+        <input type="text" class="equilateralInput" placeholder="Enter side" />
+        <button class="equilateralTriangleBtn">Calculate</button>
+        <h5 class="resultEquil"></h5>
+      </div>
+      <div class="areaOfTriangle" id="triangleDifferentSides">
+        <h2>Area of a triangle (with 3 different sides)</h2>
+        <h5>
+          Area of triangle with 3 sides of different measures can be found using
+          Heron's formula:
+        </h5>
+        <p>
+          Formula: √( s(s-a)(s-b)(s-c) )where , s is semi-perimeter of the
+          triangle : s = (a+b+c) / 2
+        </p>
+        <div class="flexInputs">
+          <input type="text" class="side-one" placeholder="sideOne value" />
+          <input type="text" class="side-two" placeholder="sideTwo value" />
+          <input type="text" class="side-three" placeholder="sideThree value" />
+        </div>
+        <h5 class="ThreeResult"></h5>
+        <button onclick="calculateAreaThree()">Calculate</button>
+      </div>
+      <div class="tringle-With-Two-Sides" id="area-of-triangle-with-Two-sides">
+        <h2>Area of a triangle (with 2 sides and one angle known)</h2>
+        <h5>
+          Area of triangle with 2 sides and an angle included between them known
+          can be found by:
+        </h5>
+        <p>
+          Formula: Area (∆ABC) = ½ bc sin A where , b & c are sides of a
+          triangle and ∠A is an angle between them.
+        </p>
+        <div class="flexInputs">
+          <input type="text" id="side1" placeholder="Enter 1 Side Value " />
+          <input type="text" id="side2"  placeholder="Enter 2 side value" />
+          <input type="text" id="angle"  placeholder="Enter Angle in degrees" />
+        </div>
+        <button onclick="calculateAreaFour()" >Calculate</button>
+        <h5 id="result-four" ></h5>
+      </div>
+    </div>
+    <!-- javascript -->
+   <script src="./calcArea.js"></script>
+  </body>
+</html>
